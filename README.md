@@ -7,10 +7,12 @@ This is a recruitment test solution for Undabot job position Frontend developer 
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Development server
+To start the development server run:
 ```
 npm run serve
 ```
+Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 
 ### Compiles and minifies for production
 ```
@@ -38,3 +40,17 @@ Responsive concepts used here are:
 Other concepts could be applied, like smaller images for small screens to reduce network traffic on mobile phones, but this wasn't implemented here.
 
 SCSS files in this task showcase the usage of variables, nesting, mixins and importing partials.
+
+## Task 3 - Contact us page
+
+This task is realized using Vuelidate and Vue computed properties. POST request is sent to server running at http://localhost:3000 as configured in environment.ts. Server implementation can be found in `undabot-server-express` repository.
+
+HTML form is an example of Vue single page component. Event sending from child component (using $emit) is demonstrated when form is successfully submitted.
+
+Both client-side and server-side validation are demonstrated in this task. For client-side validation, checkbox above Submit button needs to be checked.
+
+Client-side validation is using Vuelidate for checking constraints and calculated properties for displaying errors. When used, Submit button is disabled until all form fields are in valid state.
+
+If client-side validation is not used (checkbox not checked), validation errors (if any) are displayed based on the server response.
+
+HTML elements representing error messages are shared (reused) for both client-side and server-side validation.
